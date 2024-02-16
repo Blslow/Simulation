@@ -46,7 +46,7 @@ public class AgentSelection : MonoBehaviour
         agentMeshRenderer.material = agentSelectedMaterial;
         isSelected = true;
 
-        GetComponent<AgentHealth>().OnHit.AddListener(SelectionManager.Instance.UpdateHealthText);
+        GetComponent<AgentHealth>().OnHealthValueChange.AddListener(SelectionManager.Instance.UpdateHealthText);
         GetComponent<AgentHealth>().OnDeath.AddListener(Deselect);
 
         SelectionManager.Instance.SelectedAgent = GetComponent<AgentController>();
@@ -59,7 +59,7 @@ public class AgentSelection : MonoBehaviour
         agentMeshRenderer.material = agentBaseMaterial;
         isSelected = false;
 
-        GetComponent<AgentHealth>().OnHit.RemoveListener(SelectionManager.Instance.UpdateHealthText);
+        GetComponent<AgentHealth>().OnHealthValueChange.RemoveListener(SelectionManager.Instance.UpdateHealthText);
         GetComponent<AgentHealth>().OnDeath.RemoveListener(Deselect);
 
         //SelectionManager.Instance.SelectedAgent = null;

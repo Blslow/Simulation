@@ -12,19 +12,28 @@ public class AgentHealth : MonoBehaviour
 
     public UnityEvent OnDeath;
     public UnityEvent OnHit;
+    public UnityEvent<int> OnHealthValueChange;
 
-    public int HealthPoints { get => healthPoints; }
+    public int HealthPoints
+    {
+        get => healthPoints;
+        set
+        {
+            OnHealthValueChange.Invoke(value);
+            healthPoints = value;
+        }
+    }
 
     private void OnEnable()
     {
-        healthPoints = maxHealthPoints;
+        HealthPoints = maxHealthPoints;
     }
     public void GetHit()
     {
         OnHit.Invoke();
-        healthPoints--;
+        HealthPoints--;
 
-        if (healthPoints <= 0)
+        if (HealthPoints <= 0)
         {
             OnDeath.Invoke();
             ObjectPoolManager.ReturnObjectToPool(gameObject);

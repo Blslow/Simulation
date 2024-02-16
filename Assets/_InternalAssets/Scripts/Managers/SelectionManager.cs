@@ -31,9 +31,10 @@ public class SelectionManager : Singleton<SelectionManager>
 
     public Button DeselectButton { get => deselectButton; set => deselectButton = value; }
 
-    public void UpdateHealthText()
+    public void UpdateHealthText(int health)
     {
-        HealthText.text = "Health: " + SelectedAgent.GetComponent<AgentHealth>().HealthPoints;
+        Debug.Log(SelectedAgent.GetComponent<AgentHealth>().HealthPoints);
+        HealthText.text = "Health: " + health;
     }
 
     public void DisablePanel()
