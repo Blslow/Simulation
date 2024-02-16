@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class AgentsSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private int minStartAgentsCount = 3;
+    [SerializeField]
+    private int maxStartAgentsCount = 5;
+    [SerializeField]
+    private GameObject agentPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
