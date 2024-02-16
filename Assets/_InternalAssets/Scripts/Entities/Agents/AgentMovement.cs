@@ -14,6 +14,8 @@ public class AgentMovement : MonoBehaviour
     private float maxTimeBetweenChangingDestination = 5f;
     private float timeUntilNewDestination = 1000f;
     private float agentHeight = 1;
+    [SerializeField]
+    private float stunDuration = 1.2f;
 
     [SerializeField]
     private bool canMove = true;
@@ -45,6 +47,8 @@ public class AgentMovement : MonoBehaviour
                 );
 
             timeUntilNewDestination = Random.Range(minTimeBetweenChangingDestination, maxTimeBetweenChangingDestination);
+
+            canMove = true;
         }
 
         if (!canMove)
@@ -56,5 +60,11 @@ public class AgentMovement : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, destination, speed);
+    }
+
+    public void StunAgent()
+    {
+        timeUntilNewDestination += stunDuration;
+        canMove = false;
     }
 }

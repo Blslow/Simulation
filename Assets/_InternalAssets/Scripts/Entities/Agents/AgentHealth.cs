@@ -12,6 +12,8 @@ public class AgentHealth : MonoBehaviour
 
     [SerializeField]
     private UnityEvent OnDeath;
+    [SerializeField]
+    private UnityEvent OnHit;
 
     private void OnEnable()
     {
@@ -19,6 +21,7 @@ public class AgentHealth : MonoBehaviour
     }
     public void GetHit()
     {
+        OnHit.Invoke();
         healthPoints--;
 
         if (healthPoints <= 0)
@@ -33,6 +36,9 @@ public class AgentHealth : MonoBehaviour
         if (collision.gameObject.GetComponent<AgentHealth>())
         {
             GetHit();
+            Rigidbody pushedBody = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 direction = pushedBody.transform.position - transform.position;
+            pushedBody.AddForce(direction.normalized * 100, ForceMode.Force);
         }
     }
 }

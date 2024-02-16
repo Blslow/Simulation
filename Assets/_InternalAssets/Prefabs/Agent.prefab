@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d3ee615b4a7dbc54997b973b76744a85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7164888789607629551}
   - component: {fileID: 2015744644185995458}
   - component: {fileID: 1756803287614493818}
+  - component: {fileID: 299906073350648431}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -205,6 +206,21 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1756803287614493818}
+        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
+        m_MethodName: StunAgent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1756803287614493818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,4 +237,21 @@ MonoBehaviour:
   speed: 0.06
   minTimeBetweenChangingDestination: 1
   maxTimeBetweenChangingDestination: 5
+  stunDuration: 1.2
   canMove: 1
+--- !u!114 &299906073350648431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063997423801403708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f290b2e0cfcb936418a0e5279b2aa453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentBaseMaterial: {fileID: 2100000, guid: d3ee615b4a7dbc54997b973b76744a85, type: 2}
+  agentHoveredMaterial: {fileID: 2100000, guid: e74a86cae1e58d344ae5cb5cdd91f516, type: 2}
+  agentSelectedMaterial: {fileID: 2100000, guid: c47aa76a1c01efc4aac6c6f99314e30f, type: 2}
+  agentMeshRenderer: {fileID: 7114934057790943695}
