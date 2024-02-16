@@ -189,6 +189,7 @@ MonoBehaviour:
   OnDestroy:
     m_PersistentCalls:
       m_Calls: []
+  agentName: '-'
 --- !u!114 &2015744644185995458
 MonoBehaviour:
   m_ObjectHideFlags: 0

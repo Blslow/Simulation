@@ -10,10 +10,10 @@ public class AgentHealth : MonoBehaviour
     [SerializeField]
     private int maxHealthPoints = 3;
 
-    [SerializeField]
-    private UnityEvent OnDeath;
-    [SerializeField]
-    private UnityEvent OnHit;
+    public UnityEvent OnDeath;
+    public UnityEvent OnHit;
+
+    public int HealthPoints { get => healthPoints; }
 
     private void OnEnable()
     {

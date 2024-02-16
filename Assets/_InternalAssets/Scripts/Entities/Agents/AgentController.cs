@@ -9,6 +9,10 @@ public class AgentController : MonoBehaviour
     private UnityEvent OnInitialize;
     [SerializeField]
     private UnityEvent OnDestroy;
+    [SerializeField]
+    private string agentName = "-";
+    public string AgentName { get => agentName; }
+
     private void OnEnable()
     {
         OnInitialize.Invoke();
@@ -24,6 +28,7 @@ public class AgentController : MonoBehaviour
     private void Initialize()
     {
         AgentsSpawner.CurrentAgentsCount++;
+        agentName = "Agent" + Random.Range(1, 1000);
     }
 
     private void Terminate()
