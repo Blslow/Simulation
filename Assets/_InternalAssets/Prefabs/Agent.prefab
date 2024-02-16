@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 1914090275208420465}
   - component: {fileID: 7164888789607629551}
   - component: {fileID: 2015744644185995458}
+  - component: {fileID: 1756803287614493818}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -204,3 +205,20 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1756803287614493818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063997423801403708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d683653999a674391e53e977c29de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {x: 0, y: 0, z: 0}
+  speed: 0.06
+  minTimeBetweenChangingDestination: 1
+  maxTimeBetweenChangingDestination: 5
+  canMove: 1

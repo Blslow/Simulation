@@ -172,7 +172,7 @@ MonoBehaviour:
   maxStartAgentsCount: 5
   minSpawnTime: 2
   maxSpawnTime: 6
-  agentMaxDistance: 15
+  agentMaxDistance: 35
   agentsSpawnHeight: 3
   maxAgentsCount: 30
   timeUntilNextSpawn: 1000
@@ -698,7 +698,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2208617807653453251, guid: c68d1d5b10c641a43abf99cb4b29dfc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -33.6
       objectReference: {fileID: 0}
     - target: {fileID: 2208617807653453251, guid: c68d1d5b10c641a43abf99cb4b29dfc2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -706,7 +706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2208617807653453251, guid: c68d1d5b10c641a43abf99cb4b29dfc2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 2208617807653453251, guid: c68d1d5b10c641a43abf99cb4b29dfc2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -739,10 +739,6 @@ PrefabInstance:
     - target: {fileID: 8063997423801403708, guid: c68d1d5b10c641a43abf99cb4b29dfc2, type: 3}
       propertyPath: m_Name
       value: Agent
-      objectReference: {fileID: 0}
-    - target: {fileID: 8063997423801403708, guid: c68d1d5b10c641a43abf99cb4b29dfc2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

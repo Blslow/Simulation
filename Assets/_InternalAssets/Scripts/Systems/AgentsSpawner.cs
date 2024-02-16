@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-public class AgentsSpawner : MonoBehaviour
+public class AgentsSpawner : Singleton<AgentsSpawner>
 {
     [SerializeField]
     private GameObject agentPrefab;
@@ -38,6 +38,8 @@ public class AgentsSpawner : MonoBehaviour
 
     public static int CurrentAgentsCount = 0;
 
+    public float AgentMaxDistance { get => agentMaxDistance; }
+
     private void Start()
     {
         int startAgentsCount = Random.Range(minStartAgentsCount, maxStartAgentsCount);
@@ -71,8 +73,6 @@ public class AgentsSpawner : MonoBehaviour
         Vector3 spawnPosition = new(Random.Range(-agentMaxDistance, agentMaxDistance), agentsSpawnHeight, Random.Range(-agentMaxDistance, agentMaxDistance));
 
         ObjectPoolManager.SpawnObject(agentPrefab, spawnPosition, Quaternion.identity);
-
-        Debug.Log(CurrentAgentsCount);
     }
 
     private void OnDrawGizmosSelected()
