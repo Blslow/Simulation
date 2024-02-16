@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 2208617807653453251}
   - component: {fileID: 1914090275208420465}
   - component: {fileID: 7164888789607629551}
+  - component: {fileID: 2015744644185995458}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -180,3 +181,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47a53b7baf83249ba8e94866d27700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInitialize:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2015744644185995458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8063997423801403708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1581a3251188dfb47b52f27c4cd51f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 3
+  maxHealthPoints: 3
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []

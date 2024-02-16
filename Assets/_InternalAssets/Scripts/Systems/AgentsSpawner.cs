@@ -52,7 +52,7 @@ public class AgentsSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentAgentsCount > maxAgentsCount)
+        if (CurrentAgentsCount >= maxAgentsCount)
             return;
 
         if (timeUntilNextSpawn > 0)
@@ -71,6 +71,8 @@ public class AgentsSpawner : MonoBehaviour
         Vector3 spawnPosition = new(Random.Range(-agentMaxDistance, agentMaxDistance), agentsSpawnHeight, Random.Range(-agentMaxDistance, agentMaxDistance));
 
         ObjectPoolManager.SpawnObject(agentPrefab, spawnPosition, Quaternion.identity);
+
+        Debug.Log(CurrentAgentsCount);
     }
 
     private void OnDrawGizmosSelected()
