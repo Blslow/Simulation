@@ -60,7 +60,17 @@ public class ObjectPoolManager : MonoBehaviour
 
     public static void ReturnObjectToPool(GameObject obj)
     {
-        PooledObjectInfo pool = ObjectPools.Find(p => p.ObjectsName == obj.name);
+        //PooledObjectInfo pool = ObjectPools.Find(p => p.ObjectsName == obj.name);
+
+        PooledObjectInfo pool = null;
+        foreach (PooledObjectInfo p in ObjectPools)
+        {
+            //Debug.Log(obj.name + " == " + p.ObjectsName);
+            if (p.ObjectsName == obj.name)
+            {
+                pool = p;
+            }
+        }
 
         if (pool != null)
         {

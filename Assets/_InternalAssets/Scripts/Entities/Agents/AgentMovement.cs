@@ -31,8 +31,6 @@ public class AgentMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!canMove)
-            return;
 
         if (timeUntilNewDestination > 0)
         {
@@ -48,6 +46,9 @@ public class AgentMovement : MonoBehaviour
 
             timeUntilNewDestination = Random.Range(minTimeBetweenChangingDestination, maxTimeBetweenChangingDestination);
         }
+
+        if (!canMove)
+            return;
 
         if (Vector3.Distance(transform.position, destination) < 0.001f)
         {

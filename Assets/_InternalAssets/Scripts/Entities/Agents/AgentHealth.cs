@@ -21,15 +21,18 @@ public class AgentHealth : MonoBehaviour
     {
         healthPoints--;
 
-        if (healthPoints < 0)
+        if (healthPoints <= 0)
         {
             OnDeath.Invoke();
-            ObjectPoolManager.ReturnObjectToPool(transform.parent.gameObject);
+            ObjectPoolManager.ReturnObjectToPool(gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // health--
+        if (collision.gameObject.GetComponent<AgentHealth>())
+        {
+            GetHit();
+        }
     }
 }
