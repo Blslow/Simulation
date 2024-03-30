@@ -27,12 +27,12 @@ public class AgentController : MonoBehaviour
 
     private void Initialize()
     {
-        AgentsSpawner.CurrentAgentsCount++;
+        AgentsSpawner.Instance.CurrentAgentsCount++;
         agentName = "Agent" + Random.Range(1, 1000);
     }
 
     private void Terminate()
     {
-        AgentsSpawner.CurrentAgentsCount--;
+        AgentsSpawner.Instance.CurrentAgentsCount--;
     }
 }
