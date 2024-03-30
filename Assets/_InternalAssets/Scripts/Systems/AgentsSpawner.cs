@@ -36,9 +36,11 @@ public class AgentsSpawner : Singleton<AgentsSpawner>
     [SerializeField]
     private float timeUntilNextSpawn = 1000;
 
-    public static int CurrentAgentsCount = 0;
+    private int currentAgentsCount = 0;
+    //public static int CurrentAgentsCount = 0;
 
     public float AgentMaxDistance { get => agentMaxDistance; }
+    public int CurrentAgentsCount { get => currentAgentsCount; set => currentAgentsCount = value; }
 
     private void Start()
     {
